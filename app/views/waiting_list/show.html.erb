@@ -1,0 +1,4 @@
+<h1>Please confirm your registration</h1>
+<%= @user.first_name + @user.last_name %>
+<%= link_to 'Confirm', waiting_list_path(@user.id), :method=> :put %>
+<%= link_to 'Cancel', user_path(@user.id), :method=> :delete %>
