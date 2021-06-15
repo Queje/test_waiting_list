@@ -1,0 +1,37 @@
+<h1>
+  Register to the waiting list
+</h1>
+<hr>
+<h5>Please fill the form</h5>
+
+<%= form_with model: @user do |form| %>
+  <div>
+    <%= form.label 'First name' %>
+    <%= form.text_field :first_name %>
+  </div>
+  <div>
+    <%= form.label 'Last name' %>
+    <%= form.text_field :last_name %>
+  </div>
+  <div>
+    <%= form.label 'Phone' %>
+    <%= form.text_field :phone %>
+  </div>
+  <div>
+    <%= form.label 'email' %>
+    <%= form.text_field :email %>
+  </div>
+  <%= form.submit "Create" %>
+<% end %>
+
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this form from being saved:</h2>
+
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

@@ -1,0 +1,35 @@
+<h1>Welcome to Coworking Brest!</h1>
+<hr>
+<%= link_to 'Register to the waiting list', new_user_path %>
+<hr>
+<h5>The current waiting list is:</h5>
+<table>
+  <thead>
+    <tr>
+      <th>
+        waiting list
+      </th>
+      <th>
+        First name
+      </th>
+      <th>
+        Last name
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td>
+          <%= user.id %>
+        </td>
+        <td>
+          <%= user.first_name.capitalize %>
+        </td>
+        <td>
+          <%= user.last_name.capitalize %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
