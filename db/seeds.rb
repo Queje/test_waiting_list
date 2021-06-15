@@ -20,7 +20,7 @@ users = []
   names = Faker::Movies::HarryPotter.character.split(" ")
   users[n] = User.create!(
     first_name: names[0],
-    last_name: names[1],
+    last_name: names[1]? names[1] : names[0],
     phone: "075043905#{n}",
     email: "#{names[0]}.#{names[1]}0#{n}@yopmail.com"
   )
