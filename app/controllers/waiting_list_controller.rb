@@ -6,7 +6,7 @@ class WaitingListController < ApplicationController
   end
 
   def update
-    @user.update(waiting_status: 1)
+    @user.update(waiting_status: 1, subscription_date: DateTime.now)
     if @user.confirmed?
       redirect_to root_path
     else
