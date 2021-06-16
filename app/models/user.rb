@@ -8,8 +8,11 @@ class User < ApplicationRecord
 
   after_create :send_registration_confirmation
 
+  private
+
   def send_registration_confirmation
     UserMailer.registration_confirmation(self).deliver_now
   end
+
 end
  

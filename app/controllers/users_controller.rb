@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[destroy]
+  after_action :save_cookie, only: %i[create]
+  before_action :check_cookie, only: %i[destroy]
   
   def index
     @users = User.all.order(:subscription_date)
@@ -36,5 +38,15 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def save_cookie
+    cookies.encrypted[:email] = @user.email
+  end
+
+  def check_cookie
+    unless @user.email == cookies.encrypted[:email]
+      redirect_to root_path
+    end
   end
 end
