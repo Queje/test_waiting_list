@@ -2,7 +2,8 @@
 <hr>
 <%= link_to 'Register to the waiting list', new_user_path %>
 <hr>
-<h5>The current waiting list is:</h5>
+
+<!-- <h5>The current waiting list is:</h5>
 <table>
   <thead>
     <tr>
@@ -41,11 +42,11 @@
           <%= user.confirmed? %>
         </td>
         <td>
-          <% if user.subscription_date %>
-            <%= user.subscription_date.to_formatted_s(:short) %>
+          <% if user.confirmation_date %>
+            <%= user.confirmation_date.to_formatted_s(:short) %>
           <% end %>
         </td>
       </tr>
     <% end %>
   </tbody>
-</table>
+</table>  -->

@@ -1,10 +1,14 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[destroy]
+  before_action :set_user, only: %i[show destroy]
   after_action :save_cookie, only: %i[create]
   before_action :check_cookie, only: %i[destroy]
   
   def index
-    @users = User.all.order(:subscription_date)
+    @users = User.all.order(:confirmation_date)
+  end
+
+  def show
+    @position = User.where(waiting_status: "confirmed").order(:confirmation_date).index(@user) + 1
   end
 
   def new
@@ -24,9 +28,9 @@ class UsersController < ApplicationController
 
   def destroy
     if @user.destroy
-      redirect_to root_path
+      redirect_to waiting_list_index_path
     else
-      puts "error delete"
+      render waiting_list_path(@user.id)
     end
   end
 

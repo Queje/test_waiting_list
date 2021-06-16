@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  enum waiting_status: { first_confirmation_needed: 0, confirmed: 1, reconfirmation_needed: 2 }
+  enum waiting_status: { not_confirmed: 0, confirmed: 1, reconfirmation_needed: 2 }
 
   validates :first_name, presence: true
   validates :last_name, presence: true

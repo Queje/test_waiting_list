@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :phone
       t.string :email
       t.integer :waiting_status
-      t.datetime :subscription_date
+      t.datetime :confirmation_date
 
       t.timestamps
     end
