@@ -16,15 +16,29 @@ p " ********************************* "
 
 # Users
 users = []
+
 5.times do |n|
   names = Faker::Movies::HarryPotter.character.split(" ")
   users[n] = User.create!(
     first_name: names[0],
     last_name: names[1]? names[1] : names[0],
     phone: "075043905#{n}",
-    email: "#{names[0]}.#{names[1]}0#{n}@yopmail.com"
+    email: "#{names[0]}.#{names[1]}0#{n}@yopmail.com",
+    confirmation_date: DateTime.now-16 
   )
 end
+
+5.times do |n|
+  names = Faker::Movies::StarWars.character.split(" ")
+  users[n] = User.create!(
+    first_name: names[0],
+    last_name: names[1]? names[1] : names[0],
+    phone: "075603905#{n}",
+    email: "#{names[0]}.#{names[1]}0#{n}@yopmail.com",
+    confirmation_date: DateTime.now-35 
+  )
+end
+
 p "#{tp User.all}"
 p "Creation Users... #{User.count}"
 p "DONE"
