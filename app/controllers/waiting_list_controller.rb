@@ -2,16 +2,20 @@ class WaitingListController < ApplicationController
   before_action :set_user, only: %i[show update]
   before_action :check_cookie, only: %i[show update]
 
+  def index
+  
+  end
+  
   def show
     
   end
 
   def update
-    @user.update(waiting_status: 1, subscription_date: DateTime.now)
+    @user.update(waiting_status: "confirmed", confirmation_date: DateTime.now)
     if @user.confirmed?
-      redirect_to root_path
+      redirect_to user_path(@user.id)
     else
-      puts "error on update"
+      render 'show'
     end
   end
 

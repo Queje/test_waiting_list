@@ -1,0 +1,13 @@
+<h1>Thank you!</h1>
+<% if @user.confirmed? %>
+  <p>We have recieved your confirmation</p>
+  <p>
+    <%= @user.first_name %> <%= @user.last_name %>
+  </p>
+  <p>
+    your position in the waiting list is: <%= @position %>
+  </p>
+<% else %>
+  <p>a problem has occured, you are not confirmed</p>
+<% end %>
+    

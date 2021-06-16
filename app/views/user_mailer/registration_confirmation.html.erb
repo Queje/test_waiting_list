@@ -9,7 +9,8 @@
     </p>
     <p>
       please confirm your registration by click to the following link:
-      <a href=<%= ENV['CONFIRMATION_URL']+@user.id.to_s %> target="_blank"><%= ENV['CONFIRMATION_URL']+@user.id.to_s %></a>
+      <!-- <%= link_to "Confirmation", waiting_list_url(@user.id), :method => :get, :target=> :_blank %> -->
+      <a href=<%= ENV['CONFIRMATION_URL']+@user.id.to_s %> target="_blank">Confirmation</a>
     </p>
     <p>Thank you! </p>
   </body>
