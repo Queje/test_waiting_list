@@ -1,5 +1,5 @@
 Hello <%= @user.first_name %> <%= @user.last_name %>!
 you are registering to the coworkingBrest waiting list with : <%= @user.email %>.
 please confirm your registration by click to the following link:
-<%= link_to "Confirmation", waiting_list_url(@user.id),:method => :get, target: :_blank %>
+<%= link_to "Confirmation", waiting_list_url(@user.token),:method => :get, target: :_blank %>
 Thank you!

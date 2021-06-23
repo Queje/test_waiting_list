@@ -20,7 +20,8 @@
 - rails db:migrate
 - rails db:seed 
 - rails s
-- to use Redis, run : sidekiq
+- to use Redis, run : redis-server 
+- then run : sidekiq
 - go to http://localhost:3000/
 
 ## tasks:
