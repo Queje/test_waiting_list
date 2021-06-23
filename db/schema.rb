@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2021_06_15_074241) do
     t.string "email"
     t.integer "waiting_status"
     t.datetime "confirmation_date"
+    t.string "token"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

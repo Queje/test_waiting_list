@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :email
       t.integer :waiting_status
       t.datetime :confirmation_date
+      t.string :token, unique: true
 
       t.timestamps
     end

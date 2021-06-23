@@ -24,6 +24,7 @@ users = []
     last_name: names[1]? names[1] : names[0],
     phone: "075043905#{n}",
     email: "#{names[0]}.#{names[1]}0#{n}@yopmail.com",
+    waiting_status: "reconfirmation_needed",
     confirmation_date: DateTime.now-16 
   )
 end
@@ -35,6 +36,7 @@ end
     last_name: names[1]? names[1] : names[0],
     phone: "075603905#{n}",
     email: "#{names[0]}.#{names[1]}0#{n}@yopmail.com",
+    waiting_status: "reconfirmation_needed",
     confirmation_date: DateTime.now-35 
   )
 end

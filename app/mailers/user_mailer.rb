@@ -10,4 +10,13 @@ class UserMailer < ApplicationMailer
     )
   end
 
+  def cancel_confirmation(user)
+    @user = user
+    mail(
+      from: 'coworkingBrest@yopmail.com',
+      to: @user.email,
+      subject: 'cancel confirmation'
+    )
+  end
+
 end

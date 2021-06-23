@@ -2,5 +2,5 @@
 <p>
   <%= @user.first_name %> <%= @user.last_name %>
 </p>
-<%= link_to 'Confirm', waiting_list_path(@user.id), :method=> :put %>
-<%= link_to 'Cancel', user_path(@user.id), :method=> :delete %>
+<%= link_to 'Confirm', waiting_list_path(@user.token), :method=> :put %>
+<%= link_to 'Cancel', user_path(@user.token), :method=> :delete %>
